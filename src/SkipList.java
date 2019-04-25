@@ -82,7 +82,7 @@ public class SkipList<K, V> implements SimpleMap<K, V> {
   // | SkipList methods |
   // +-------------------+
 
-  @Override public V set(K key, V value) {
+  public V set(K key, V value) {
     if (key == null) {
       throw new NullPointerException("null key");
     }
@@ -171,7 +171,7 @@ public class SkipList<K, V> implements SimpleMap<K, V> {
     return true;
   } // containsKey(K)
 
-  @Override public V remove(K key) {
+  public V remove(K key) {
     if (key == null)
       throw new NullPointerException("null key");
 
@@ -207,43 +207,43 @@ public class SkipList<K, V> implements SimpleMap<K, V> {
     return null;
   } // remove(K)
 
-  @Override public Iterator<K> keys() {
+  public Iterator<K> keys() {
     return new Iterator<K>() {
       Iterator<SLNode<K, V>> nit = SkipList.this.nodes();
 
-      @Override public boolean hasNext() {
+      public boolean hasNext() {
         return nit.hasNext();
       } // hasNext()
 
-      @Override public K next() {
+      public K next() {
         return nit.next().key;
       } // next()
 
-      @Override public void remove() {
+      public void remove() {
         nit.remove();
       } // remove()
     };
   } // keys()
 
-  @Override public Iterator<V> values() {
+  public Iterator<V> values() {
     return new Iterator<V>() {
       Iterator<SLNode<K, V>> nit = SkipList.this.nodes();
 
-      @Override public boolean hasNext() {
+      public boolean hasNext() {
         return nit.hasNext();
       } // hasNext()
 
-      @Override public V next() {
+      public V next() {
         return nit.next().value;
       } // next()
 
-      @Override public void remove() {
+      public void remove() {
         nit.remove();
       } // remove()
     };
   } // values()
 
-  @Override public void forEach(BiConsumer<? super K, ? super V> action) {
+  public void forEach(BiConsumer<? super K, ? super V> action) {
     SLNode<K, V> x = new SLNode<K, V>(null, null, this.height);
     x.next = this.front;
 
