@@ -226,7 +226,7 @@ public class SkipListTests {
     setup();
     String[] alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
     for (String s : alphabet) {
-      set(s);
+      strings.set(s, s);
     }
     for (int i = 0; i < alphabet.length; i++) {
       assertTrue(alphabet[i].equals(strings.remove(alphabet[i])));
@@ -238,7 +238,7 @@ public class SkipListTests {
     setup();
     String[] alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
     for (String s : alphabet) {
-      set(s);
+      strings.set(s, s);
     }
     for (int i = alphabet.length - 1; i >= 0; i--) {
       assertTrue(alphabet[i].equals(strings.remove(alphabet[i])));
@@ -259,8 +259,16 @@ public class SkipListTests {
   void simpleSizeTest() {
     setup();
     String[] alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+
+    /* increasing size */
     for (int i = 1; i <= alphabet.length; i++) {
-      set(alphabet[i - 1]);
+      strings.set(alphabet[i - 1], alphabet[i - 1]);
+      assertEquals(i, strings.size());
+    }
+
+    /* decreasing size */
+    for (int i = alphabet.length - 1; i >= 0; i--) {
+      strings.remove(alphabet[i]);
       assertEquals(i, strings.size());
     }
   }
@@ -272,7 +280,7 @@ public class SkipListTests {
   void heightTest() {
     setup();
     for (int i = 0; i < 100000; i++) {
-      set(i);
+      ints.set(i, String.valueOf(i));
     }
   }
 
@@ -378,5 +386,13 @@ public class SkipListTests {
     SkipListTests slt = new SkipListTests();
     slt.setup();
     slt.simpleTest();
+    slt.emptyTest();
+    slt.heightTest();
+    slt.inorderRetrieve();
+    slt.randomTest();
+    slt.reverseRetrieve();
+    slt.simpleSetTest();
+    slt.simpleSizeTest();
+    slt.randomTest();
   } // main
 } // class SkipListTests
