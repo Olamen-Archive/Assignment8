@@ -2,7 +2,7 @@
 Author: Zixuan Guo & Chris Won
 
 ## SkipList Time Complexity Analysis
-To analyze the time complexity of the skiplist, we wrote a program that test the performance of skip list under given number of random datasets. In the program, we record the execution for core operations (find, insert, and deletion). As we increasing the size of the data, we should be able to determine the time complexity from the pattern of increasing times consumption.
+To analyze the time complexity of the skiplist, we wrote a program that test the performance of skip list under given number of random datasets. In the program, we record the execution time for core operations (find, insert, and deletion). As we increasing the size of the data, we should be able to determine the time complexity from the pattern of increasing times consumption.
 
 Experiment result:
 
