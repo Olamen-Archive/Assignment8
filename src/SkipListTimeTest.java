@@ -3,7 +3,7 @@ import java.util.Random;
 public class SkipListTimeTest {
   public static void main(String[] args) {
     int[] timeToTest = new int[]{100, 1000, 10000, 100000, 1000000};
-    System.out.printf("          %8s%8s%8s\n", "set", "get", "remove");
+    System.out.printf("%10s%8s%8s%8s\n", "size", "set", "get", "remove");
 
     for (int i = 0; i < timeToTest.length; i++) {
       long[] times = test(timeToTest[i]);
