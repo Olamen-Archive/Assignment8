@@ -180,7 +180,6 @@ public class SkipList<K, V> implements SimpleMap<K, V> {
     } catch (Exception IndexOutOfBoundsException) {
       return false;
     }
-
     return true;
   } // containsKey(K)
 

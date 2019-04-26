@@ -221,6 +221,9 @@ public class SkipListTests {
     assertFalse(strings.containsKey("hello"));
   } // emptyTest()
 
+  /**
+   * Retrieve data in order from the list
+   */
   @Test
   public void inorderRetrieve() {
     setup();
@@ -233,6 +236,9 @@ public class SkipListTests {
     }
   }
 
+  /**
+   * Retrieve data in reverse order from the list
+   */
   @Test
   public void reverseRetrieve() {
     setup();
@@ -245,6 +251,9 @@ public class SkipListTests {
     }
   }
 
+  /**
+   * Test if set work as expected
+   */
   @Test
   public void simpleSetTest() {
     setup();
@@ -255,6 +264,9 @@ public class SkipListTests {
     assertTrue(ints.get(1).equals("2"));
   }
 
+  /**
+   * Test if size work as expected
+   */
   @Test
   public void simpleSizeTest() {
     setup();
@@ -284,6 +296,16 @@ public class SkipListTests {
     }
   }
 
+  @Test
+  public void containsTest() {
+    setup();
+    for (int i = 0; i < 100; i++) {
+      set(i);
+      for (int j = 0; j <= i; j++) {
+        assertTrue(ints.containsKey(j));
+      }
+    }
+  }
   // +-----------------+-------------------------------------------------
   // | RandomizedTests |
   // +-----------------+
