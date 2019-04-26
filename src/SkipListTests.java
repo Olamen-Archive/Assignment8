@@ -222,7 +222,7 @@ public class SkipListTests {
   } // emptyTest()
 
   @Test
-  void inorderRetrieve() {
+  public void inorderRetrieve() {
     setup();
     String[] alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
     for (String s : alphabet) {
@@ -234,7 +234,7 @@ public class SkipListTests {
   }
 
   @Test
-  void reverseRetrieve() {
+  public void reverseRetrieve() {
     setup();
     String[] alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
     for (String s : alphabet) {
@@ -246,7 +246,7 @@ public class SkipListTests {
   }
 
   @Test
-  void simpleSetTest() {
+  public void simpleSetTest() {
     setup();
     ints.set(1, "1");
     assertTrue(ints.get(1).equals("1"));
@@ -256,7 +256,7 @@ public class SkipListTests {
   }
 
   @Test
-  void simpleSizeTest() {
+  public void simpleSizeTest() {
     setup();
     String[] alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 
@@ -277,7 +277,7 @@ public class SkipListTests {
    * Simple test for scenario that height exceed default height
    */
   @Test
-  void heightTest() {
+  public void heightTest() {
     setup();
     for (int i = 0; i < 100000; i++) {
       ints.set(i, String.valueOf(i));
